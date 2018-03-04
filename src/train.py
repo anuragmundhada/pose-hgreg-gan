@@ -35,7 +35,10 @@ def step(split, epoch, opt, dataLoader, model, criterion, optimizer = None):
       debugger.showImg()
       debugger.saveImg('debug/{}.png'.format(i))
 
+    # FusioCriterion is an Autograd funciton which can be called only once in the forward pass. So it is defined again in every iteration.
+    # Don't ask why.
     loss = FusionCriterion(opt.regWeight, opt.varWeight)(reg, target3D_var)
+
     Loss3D.update(loss.data[0], input.size(0))
     for k in range(opt.nStack):
       loss += criterion(output[k], target2D_var)
