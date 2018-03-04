@@ -28,6 +28,11 @@ class opts():
     self.parser.add_argument('-regWeight', type = float, default = 0, help = 'depth regression loss weight')
     self.parser.add_argument('-varWeight', type = float, default = 0, help = 'variance loss weight')
     
+    self.parser.add_argument('-disLR', type = float, default = 2.5e-5, help = 'Learning Rate of discriminator')
+    self.parser.add_argument('-adWeight', type = float, default = 0, help = 'adversarial loss weight')
+    self.parser.add_argument('-pool_size', type = float, default = 50, help = 'size of fake pose pool')
+    self.parser.add_argument('-loadDis', default = 'none', help = 'Provide full path to a previously trained discriminator')
+    self.parser.add_argument('-noise_real', type = float, default = 0, help = 'magnitude of gaussian noise added to real pose for training discriminator')
     
   def parse(self):
     self.init()  

@@ -7,7 +7,7 @@ import mpl_toolkits.mplot3d
 from mpl_toolkits.mplot3d import Axes3D
 
 oo = 128
-def show3D(ax, points, c = (255, 0, 0)):
+def Show3D(ax, points, c = (255, 0, 0)):
   points = points.reshape(ref.nJoints, 3)
   #print 'show3D', c, points
   x, y, z = np.zeros((3, ref.nJoints))

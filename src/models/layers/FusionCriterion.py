@@ -31,7 +31,7 @@ class FusionCriterion(Function):
     output = torch.FloatTensor(1) * 0
     for t in range(batchSize):
       s = xy[t].sum()
-      if s < ref.eps and s > - ref.eps: #Sup data
+      if s < ref.eps and s > - ref.eps: #Supervised data
         loss = ((input[t] - z[t]) ** 2).sum() / ref.nJoints
         output += self.regWeight * loss
       else:
