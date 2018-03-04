@@ -27,8 +27,8 @@ shiftPX = 50
 disturb = 10
 
 dataDir = '../data'
-mpiiImgDir = '/home/zxy/Datasets/mpii/images/'
-h36mImgDir = '/home/zxy/Datasets/Human3.6M/images/'
+mpiiImgDir = '/home/project/datasets/mpii/images/'
+h36mImgDir = '/home/project/datasets/Human3.6/images/'
 expDir = '../exp'
 
 nThreads = 4

@@ -3,9 +3,9 @@ from torch.autograd import Function
 import numpy as np
 import ref
 
-class FusionCriterion(Function):
+class FusionCriterionAdversarial(Function):
   def __init__(self, regWeight, varWeight):
-    super(FusionCriterion, self).__init__()
+    super(FusionCriterionAdversarial, self).__init__()
     self.regWeight = regWeight
     self.varWeight = varWeight
    
@@ -22,7 +22,8 @@ class FusionCriterion(Function):
                            [1, 1], 
                            [1, 1]]
 
-    
+    self.netD_A = networks.define_D()
+
   def forward(self, input, target_):
     target = target_.view(target_.size(0), ref.nJoints, 3)
     xy = target[:, :, :2]
